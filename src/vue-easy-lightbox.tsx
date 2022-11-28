@@ -105,6 +105,7 @@ export default defineComponent({
   emits: {
     hide: () => true,
     /* eslint-disable @typescript-eslint/no-unused-vars */
+    'on-shop': () => true,
     'on-error': (e: Event) => true,
     'on-prev': (oldIndex: number, newIndex: number) => true,
     'on-next': (oldIndex: number, newIndex: number) => true,
@@ -287,6 +288,11 @@ export default defineComponent({
     const emitRotate = () => {
       const deg = imgWrapperState.rotateDeg % 360
       emit('on-rotate', Math.abs(deg < 0 ? deg + 360 : deg))
+    }
+
+    const emitShop = () => {
+      console.log('on-shop emit')
+      emit('on-shop')
     }
 
     const rotateLeft = () => {
@@ -618,16 +624,10 @@ export default defineComponent({
           toolbarMethods: {
             zoomIn,
             zoomOut,
-            rotate: rotateLeft,
-            rotateLeft,
-            rotateRight,
             resize
           },
           zoomIn,
           zoomOut,
-          rotate: rotateLeft,
-          rotateLeft,
-          rotateRight,
           resize
         })
       ) : (
@@ -635,8 +635,7 @@ export default defineComponent({
           zoomIn={zoomIn}
           zoomOut={zoomOut}
           resize={resize}
-          rotateLeft={rotateLeft}
-          rotateRight={rotateRight}
+          shopNow={emitShop}
         />
       )
     }

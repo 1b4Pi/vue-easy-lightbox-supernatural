@@ -9,8 +9,8 @@
   transform: translate(-50%);
   opacity: 0.9;
   display: flex;
-  background-color: rgb(45, 45, 45);
-  border-radius: 4px;
+  background-color: #d1c4e9;
+  border-radius: 0px;
   padding: 0;
 
   .toolbar-btn {
@@ -18,15 +18,15 @@
     flex-shrink: 0;
     cursor: pointer;
     padding: 6px 10px;
-    font-size: 20px;
-    color: #fff;
-    background-color: #2d2d2d;
+    font-size: 32px;
+    color: #1d1d1d;
+    background-color: #d1c4e9;
     -webkit-tap-highlight-color: transparent;
     outline: none;
 
     &:hover,
     &:active {
-      background-color: rgb(61, 61, 61);
+      background-color: #B5A9CD;
     }
   }
 }

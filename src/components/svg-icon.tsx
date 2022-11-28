@@ -11,8 +11,21 @@ export const SvgIcon = defineComponent({
   },
   setup(props) {
     return () => (
-      <svg class={`${prefixCls}-icon icon`} aria-hidden="true">
-        <use xlinkHref={`#icon-${props.type}`}></use>
+      <svg
+        class={`${prefixCls}-icon icon`}
+        aria-hidden="true"
+      >
+        <filter id="noise">
+          <feTurbulence baseFrequency="0.325" />
+          <feDisplacementMap
+            in="SourceGraphic"
+            scale="1"
+          />
+        </filter>
+        <use
+          filter="url(#noise)"
+          xlinkHref={`#icon-${props.type}`}
+        ></use>
       </svg>
     )
   }

@@ -16,15 +16,19 @@ export const Toolbar = defineComponent({
       type: Function as PropType<MouseEventHandler>,
       default: voidFn
     },
-    rotateLeft: {
-      type: Function as PropType<MouseEventHandler>,
-      default: voidFn
-    },
-    rotateRight: {
-      type: Function as PropType<MouseEventHandler>,
-      default: voidFn
-    },
+    // rotateLeft: {
+    //   type: Function as PropType<MouseEventHandler>,
+    //   default: voidFn
+    // },
+    // rotateRight: {
+    //   type: Function as PropType<MouseEventHandler>,
+    //   default: voidFn
+    // },
     resize: {
+      type: Function as PropType<MouseEventHandler>,
+      default: voidFn
+    },
+    shopNow: {
       type: Function as PropType<MouseEventHandler>,
       default: voidFn
     }
@@ -32,10 +36,10 @@ export const Toolbar = defineComponent({
   setup(props) {
     return () => {
       return (
-        <div class={`${prefixCls}-toolbar`}>
+        <div class={`${prefixCls}-toolbar z-max`}>
           <div
             role="button"
-            aria-label='zoom in button'
+            aria-label="zoom in button"
             class="toolbar-btn toolbar-btn__zoomin"
             onClick={props.zoomIn}
           >
@@ -44,7 +48,7 @@ export const Toolbar = defineComponent({
 
           <div
             role="button"
-            aria-label='zoom out button'
+            aria-label="zoom out button"
             class="toolbar-btn toolbar-btn__zoomout"
             onClick={props.zoomOut}
           >
@@ -53,7 +57,7 @@ export const Toolbar = defineComponent({
 
           <div
             role="button"
-            aria-label='resize image button'
+            aria-label="resize image button"
             class="toolbar-btn toolbar-btn__resize"
             onClick={props.resize}
           >
@@ -62,20 +66,11 @@ export const Toolbar = defineComponent({
 
           <div
             role="button"
-            aria-label='image rotate left button'
-            class="toolbar-btn toolbar-btn__rotate"
-            onClick={props.rotateLeft}
+            aria-label="resize image button"
+            class="toolbar-btn toolbar-btn__resize"
+            onClick={props.shopNow}
           >
-            <SvgIcon type="rotate-left" />
-          </div>
-
-          <div
-            role="button"
-            aria-label='image rotate right button'
-            class="toolbar-btn toolbar-btn__rotate"
-            onClick={props.rotateRight}
-          >
-            <SvgIcon type="rotate-right" />
+            <SvgIcon type="shop" />
           </div>
         </div>
       )
