@@ -675,7 +675,7 @@ export default defineComponent({
             {renderWrapper()}
           </Transition>
           {renderTestImg()}
-          <div class={`${prefixCls}-btns-wrapper`}>
+          <div class={`${prefixCls}-btns-wrapper fit`}>
             {renderPrevBtn()}
             {renderNextBtn()}
             {renderImgTitle()}
