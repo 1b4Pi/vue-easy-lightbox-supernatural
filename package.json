@@ -28,7 +28,6 @@
     "./external-css/vue-easy-lightbox.css": "./dist/external-css/vue-easy-lightbox.css",
     "./*": "./*"
   },
-  "type": "module",
   "browser": {
     "./sfc": "src/vue-easy-lightbox.vue"
   },
